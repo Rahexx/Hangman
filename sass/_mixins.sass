@@ -1,0 +1,10 @@
+$breakpoints: ( 'small': ('min-width: 576px'), 'medium': ('min-width: 768px'), 'large': ('min-width: 992px'), 'extra-large': ('min-width: 1200px'),)
+
+=mq($breakpoint)
+    $size: map-get($breakpoints, $breakpoint)
+    @if $size
+        @media #{$size}
+            @content
+    @else
+        error '"#{$breakpoint}" - Nie rozpoznaje tej wielkości'
+
