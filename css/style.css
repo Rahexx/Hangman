@@ -63,7 +63,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 20px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -80,16 +79,16 @@
 
 .hangman__img {
   position: absolute;
-  bottom: -150px;
-  left: -30px;
-  height: 200px;
-  width: 200px;
-  opacity: 0;
+  bottom: 0;
+  left: -20px;
+  height: 170px;
+  width: 170px;
+  opacity: 1;
 }
 
 .password {
   height: 200px;
-  margin: 0 2px 20px 35vw;
+  margin: 0 2px 10px 32vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,9 +108,10 @@
 .password__letter {
   position: relative;
   display: inline-block;
-  height: 30px;
+  height: 20px;
   width: 20px;
   margin-right: 5px;
+  text-align: center;
 }
 
 .password__letter:after {
@@ -140,7 +140,7 @@
 .keyboard__letter {
   height: 30px;
   width: 30px;
-  margin: 5px;
+  margin: 3px;
   padding: 5px;
   border: 1px solid white;
   text-align: center;
@@ -178,5 +178,41 @@ button {
   letter-spacing: 2px;
   color: white;
   background-color: transparent;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background-image: url("../images/blackboard.jpg");
+  z-index: 1;
+}
+
+.popup__exit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+}
+
+.popup__title {
+  margin: 15vh 0 20px;
+  text-align: center;
+}
+
+.popup__list {
+  list-style: none;
+  text-align: center;
+}
+
+.popup__item {
+  margin: 7px 0;
+}
+
+.popup__item:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
