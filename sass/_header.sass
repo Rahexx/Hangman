@@ -5,10 +5,24 @@
     display: flex
     flex-direction: column
     justify-content: space-evenly
+    +mq(xsmall)
+        flex-direction: row
     &__title
         text-align: center
         letter-spacing: 4px
+        +mq(xsmall)
+            width: calc(100% / 3)
+        +mq(small)
+            line-height: 100%
     &__info
         text-align: center
+        +mq(xsmall)
+            width: calc(100% / 3)
+        +mq(small)
+            line-height: calc(100% + 16px)
     &__category
         text-align: center
+        +mq(xsmall)
+            width: calc(100% / 3)
+        +mq(small)
+            line-height: calc(100% + 16px)
