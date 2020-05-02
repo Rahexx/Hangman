@@ -8,6 +8,8 @@
 
 .page {
   background-image: url("../images/blackboard.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   font-family: 'Love Ya Like A Sister', cursive;
 }
@@ -53,6 +55,27 @@
   }
 }
 
+@media (min-width: 768px) {
+  .header {
+    height: 15%;
+    margin-bottom: 100px;
+  }
+}
+
+@media (min-width: 812px) {
+  .header {
+    height: 20%;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    height: 15%;
+    margin-bottom: 100px;
+  }
+}
+
 .header__title {
   text-align: center;
   letter-spacing: 4px;
@@ -67,6 +90,27 @@
 @media (min-width: 576px) {
   .header__title {
     line-height: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__title {
+    font-size: 50px;
+    line-height: calc(20vh / 2);
+  }
+}
+
+@media (min-width: 812px) {
+  .header__title {
+    font-size: 32px;
+    line-height: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .header__title {
+    font-size: 50px;
+    line-height: calc(20vh / 2);
   }
 }
 
@@ -86,6 +130,28 @@
   }
 }
 
+@media (min-width: 768px) {
+  .header__info {
+    margin: 20px 10px;
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 812px) {
+  .header__info {
+    font-size: 16px;
+    margin: 0;
+    line-height: calc(100% + 16px);
+  }
+}
+
+@media (min-width: 992px) {
+  .header__info {
+    margin: 20px 10px;
+    font-size: 30px;
+  }
+}
+
 .header__category {
   text-align: center;
 }
@@ -99,6 +165,28 @@
 @media (min-width: 576px) {
   .header__category {
     line-height: calc(100% + 16px);
+  }
+}
+
+@media (min-width: 768px) {
+  .header__category {
+    margin: 20px 10px;
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 812px) {
+  .header__category {
+    font-size: 16px;
+    margin: 0;
+    line-height: calc(100% + 16px);
+  }
+}
+
+@media (min-width: 992px) {
+  .header__category {
+    margin: 20px 10px;
+    font-size: 30px;
   }
 }
 
@@ -116,6 +204,18 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .game {
+    overflow: visible;
+  }
+}
+
+@media (min-width: 768px) {
+  .game {
+    overflow: visible;
+  }
 }
 
 .hangman {
@@ -153,6 +253,30 @@
   }
 }
 
+@media (min-width: 768px) {
+  .hangman__img {
+    height: 400px;
+    width: 400px;
+    bottom: -20px;
+  }
+}
+
+@media (min-width: 812px) {
+  .hangman__img {
+    bottom: -10px;
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media (min-width: 992px) {
+  .hangman__img {
+    height: 450px;
+    width: 450px;
+    bottom: -20px;
+  }
+}
+
 .password {
   height: 200px;
   margin: 0 2px 10px 32vw;
@@ -168,9 +292,23 @@
           justify-content: flex-start;
 }
 
+@media (min-width: 768px) {
+  .password {
+    height: 300px;
+    margin-bottom: 5px;
+  }
+}
+
 @media (min-width: 576px) {
   .password {
     margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .password {
+    height: 240px;
+    margin-bottom: 0;
   }
 }
 
@@ -184,6 +322,27 @@
   }
 }
 
+@media (min-width: 768px) {
+  .password__content {
+    height: 40px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: 812px) {
+  .password__content {
+    height: 30px;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .password__content {
+    height: 40px;
+    margin-bottom: 5px;
+  }
+}
+
 .password__letter {
   position: relative;
   display: inline-block;
@@ -193,14 +352,57 @@
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .password__letter {
+    height: 40px;
+    width: 30px;
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 812px) {
+  .password__letter {
+    height: 20px;
+    width: 20px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .password__letter {
+    height: 40px;
+    width: 30px;
+    font-size: 40px;
+  }
+}
+
 .password__letter:after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 0;
   right: 0;
   display: block;
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid white;
+}
+
+@media (min-width: 768px) {
+  .password__letter:after {
+    border-bottom: 3px solid white;
+  }
+}
+
+@media (min-width: 812px) {
+  .password__letter:after {
+    border-bottom: 1px solid white;
+  }
+}
+
+@media (min-width: 992px) {
+  .password__letter:after {
+    bottom: -7px;
+    border-bottom: 3px solid white;
+  }
 }
 
 .keyboard {
@@ -250,6 +452,36 @@
   }
 }
 
+@media (min-width: 768px) {
+  .keyboard__letter {
+    height: 60px;
+    width: 60px;
+    margin-bottom: 5px;
+    font-size: 30px;
+    line-height: calc(100% + 15px);
+  }
+}
+
+@media (min-width: 812px) {
+  .keyboard__letter {
+    height: 30px;
+    width: 30px;
+    margin: 1px 2px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .keyboard__letter {
+    height: 60px;
+    width: 60px;
+    margin-bottom: 5px;
+    font-size: 30px;
+    line-height: calc(100% + 15px);
+  }
+}
+
 .list-buttons {
   margin: 5px 0 15px;
   display: -webkit-box;
@@ -258,6 +490,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 0 0 15px;
 }
 
 .list-buttons__random {
@@ -313,6 +546,30 @@ button {
 @media (min-width: 410px) {
   button {
     margin-top: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  button {
+    height: 80px;
+    width: 350px;
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 812px) {
+  button {
+    height: 45px;
+    width: 220px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  button {
+    height: 80px;
+    width: 350px;
+    font-size: 30px;
   }
 }
 

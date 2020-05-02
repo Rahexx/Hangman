@@ -7,6 +7,15 @@
     justify-content: space-evenly
     +mq(xsmall)
         flex-direction: row
+    +mq(medium)
+        height: 15%
+        margin-bottom: 100px
+    +mq(xlarge)
+        height: 20%
+        margin-bottom: 0    
+    +mq(large)
+        height: 15%
+        margin-bottom: 100px
     &__title
         text-align: center
         letter-spacing: 4px
@@ -14,15 +23,44 @@
             width: calc(100% / 3)
         +mq(small)
             line-height: 100%
+        +mq(medium)
+            font-size: 50px
+            line-height: calc(20vh / 2)
+        +mq(xlarge)
+            font-size: 32px
+            line-height: 100%
+        +mq(large)
+            font-size: 50px
+            line-height: calc(20vh / 2)
     &__info
         text-align: center
         +mq(xsmall)
             width: calc(100% / 3)
         +mq(small)
             line-height: calc(100% + 16px)
+        +mq(medium)
+            margin: 20px 10px
+            font-size: 30px
+        +mq(xlarge)
+            font-size: 16px
+            margin: 0
+            line-height: calc(100% + 16px)
+        +mq(large)
+            margin: 20px 10px
+            font-size: 30px
     &__category
         text-align: center
         +mq(xsmall)
             width: calc(100% / 3)
         +mq(small)
             line-height: calc(100% + 16px)
+        +mq(medium)
+            margin: 20px 10px
+            font-size: 30px
+        +mq(xlarge)
+            font-size: 16px
+            margin: 0
+            line-height: calc(100% + 16px)
+        +mq(large)
+            margin: 20px 10px
+            font-size: 30px
