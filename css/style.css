@@ -76,6 +76,13 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .header {
+    height: 15%;
+    margin-bottom: 0;
+  }
+}
+
 .header__title {
   text-align: center;
   letter-spacing: 4px;
@@ -212,9 +219,14 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .game {
-    overflow: visible;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -277,6 +289,15 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .hangman__img {
+    height: 550px;
+    width: 550px;
+    left: -1300px;
+    bottom: -400px;
+  }
+}
+
 .password {
   height: 200px;
   margin: 0 2px 10px 32vw;
@@ -309,6 +330,24 @@
   .password {
     height: 240px;
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .password {
+    height: 80px;
+    margin: 0 0 10px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
 }
 
@@ -424,6 +463,14 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .keyboard {
+    margin: 0 100px 0 auto;
+    -ms-flex-preferred-size: 600px;
+        flex-basis: 600px;
+  }
+}
+
 .keyboard__letter {
   height: 30px;
   width: 30px;
@@ -433,6 +480,10 @@
   text-align: center;
   line-height: 20px;
   border-radius: 50px;
+}
+
+.keyboard__letter:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 410px) {
@@ -490,7 +541,23 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0 0 15px;
+}
+
+@media (min-width: 992px) {
+  .list-buttons {
+    margin: 0 0 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .list-buttons {
+    margin: 20px 50px 15px;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
 }
 
 .list-buttons__random {
@@ -543,6 +610,10 @@ button {
   background-color: transparent;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 410px) {
   button {
     margin-top: 20px;
@@ -570,6 +641,16 @@ button {
     height: 80px;
     width: 350px;
     font-size: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  button {
+    height: 80px;
+    width: 350px;
+    margin-left: 40px;
+    font-size: 30px;
+    outline: none;
   }
 }
 
