@@ -230,7 +230,7 @@ button
 .popup
     height: 100vh
     width: 100vw
-    display: block
+    display: none
     position: absolute
     top: 0
     left: 0
@@ -249,6 +249,8 @@ button
         top: 10px
         right: 10px
         font-size: 30px
+        &:hover
+            cursor: pointer
         +mq(medium)
             top: 20px
             right: 30px
