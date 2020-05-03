@@ -228,26 +228,87 @@ button
         outline: none
 
 .popup
+    height: 100vh
+    width: 100vw
+    display: block
     position: absolute
     top: 0
-    bottom: 0
     left: 0
-    right: 0
-    display: none
     background-image: url("../images/blackboard.jpg")
+    background-repeat: none
+    background-size: cover
     z-index: 1
+    +mq(extra-large)
+        height: 75vh
+        width: 30vw
+        top: calc(25vh / 2)
+        left: calc(70vw / 2)
+        border-radius: 20px
     &__exit
         position: absolute
         top: 10px
         right: 10px
         font-size: 30px
+        +mq(medium)
+            top: 20px
+            right: 30px
+            font-size: 50px
+        +mq(extra-large)
+            right: 20px
+            font-size: 30px
     &__title
         margin: 15vh 0 20px
         text-align: center
+        font-size: 36px
+        letter-spacing: 2px
+        +mq(medium)
+            font-size: 60px
+        +mq(extra-large)
+            font-size: 32px
     &__list
         list-style: none
         text-align: center
     &__item
-        margin: 7px 0
+        width: 75%
+        margin: 7px auto
+        position: relative
+        font-size: 24px
+        overflow: hidden
+        &:before
+            content: ''
+            display: block
+            position: absolute
+            bottom: -3px
+            left: 0
+            height: 20px
+            width: 20px
+            background-image: url('../images/chalk.png')
+            background-repeat: no-repeat
+            background-size: cover
+            opacity: 0
+            transition: left 2s ease, opacity .1s ease
+        &:after
+            content: ''
+            display: block
+            height: 1px
+            width: 0
+            background-color: white
+            transition: width 2s ease
+        &--active
+            color: black
         &:hover
             cursor: pointer
+        +mq(medium)
+            font-size: 40px
+        +mq(extra-large)
+            min-width: 10px
+            font-size: 20px
+            &--active:hover:before
+                display: none
+            &--active:hover:after
+                display: none
+            &:hover:before
+                opacity: 1
+                left: 110%
+            &:hover:after
+                width: 110%
