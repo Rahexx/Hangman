@@ -240,7 +240,7 @@
   left: -20px;
   height: 170px;
   width: 170px;
-  opacity: 1;
+  opacity: 0;
 }
 
 @media (min-width: 410px) {
@@ -389,6 +389,7 @@
   width: 20px;
   margin-right: 5px;
   text-align: center;
+  visibility: hidden;
 }
 
 @media (min-width: 768px) {
@@ -423,6 +424,7 @@
   right: 0;
   display: block;
   border-bottom: 1px solid white;
+  visibility: visible;
 }
 
 @media (min-width: 768px) {
@@ -455,6 +457,7 @@
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  opacity: 0;
 }
 
 @media (min-width: 576px) {
@@ -477,9 +480,40 @@
   margin: 3px;
   padding: 5px;
   border: 1px solid white;
+  position: relative;
   text-align: center;
   line-height: 20px;
   border-radius: 50px;
+}
+
+.keyboard__letter--checked:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  height: 100%;
+  width: 2px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  background-color: white;
+}
+
+.keyboard__letter--checked:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  height: 100%;
+  width: 2px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  background-color: white;
 }
 
 .keyboard__letter:hover {

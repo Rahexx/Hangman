@@ -8,3 +8,15 @@ $breakpoints: (xxsmall: (min-width: 410px), xsmall: (min-width: 533px), small: (
     @else
         error '"#{$breakpoint}" - Nie rozpoznaje tej wielkości'
 
+=cancelLetter($rotate)
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    left: calc(50% - 1px)
+    height: 100%
+    width: 2px
+    transform: rotate($rotate)
+    transform-origin: 50%
+    background-color: white
+

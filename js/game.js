@@ -15,7 +15,7 @@ class Game {
     this.currentPassword = '';
     this.countMistake = 0;
     this.maxNumberMistake = 8;
-    this.scor = 0;
+    this.score = 0;
     this.averageTime = 0;
     this.pastPasswords = [];
   }
@@ -48,13 +48,25 @@ class Game {
     return this.pastPasswords;
   }
 
+  increaseMistake() {
+    this.countMistake += 1;
+  }
+
   randomPasswords() {
     this.currentCategory = this.getCurrentCategory();
-    this.indexCurrentCategories = this.categories.findIndex((category) => category.name === this.currentCategory);
-    this.lengthPasswords = this.categories[this.indexCurrentCategories].passwords.length;
+    this.indexCurrentCategories = this.categories.findIndex(
+      (category) => category.name === this.currentCategory,
+    );
+    this.lengthPasswords = this.categories[
+      this.indexCurrentCategories
+    ].passwords.length;
     this.randomIndex = Math.round(Math.random() * (this.lengthPasswords - 1));
-    this.currentPassword = this.categories[this.indexCurrentCategories].passwords[this.randomIndex];
-    this.itWas = this.pastPasswords.findIndex((password) => password === this.currentPassword);
+    this.currentPassword = this.categories[
+      this.indexCurrentCategories
+    ].passwords[this.randomIndex];
+    this.itWas = this.pastPasswords.findIndex(
+      (password) => password === this.currentPassword,
+    );
 
     if (this.itWas === -1) {
       this.pushPastPasswords(this.currentPassword);
