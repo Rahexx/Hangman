@@ -709,6 +709,12 @@ button:hover {
     left: calc(70vw / 2);
     border-radius: 20px;
   }
+  .popup--changeSize {
+    top: calc(75vh / 2);
+    left: calc(25vw / 2);
+    height: 25vh;
+    width: 75vw;
+  }
 }
 
 .popup__exit {
@@ -753,6 +759,9 @@ button:hover {
 @media (min-width: 1200px) {
   .popup__title {
     font-size: 32px;
+  }
+  .popup__title--marginTop {
+    margin: calc(12.5vh - 20px) auto;
   }
 }
 

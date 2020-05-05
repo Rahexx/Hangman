@@ -20,6 +20,10 @@ class Game {
     this.pastPasswords = [];
   }
 
+  getMaxNumberMistake() {
+    return this.maxNumberMistake;
+  }
+
   setCurrentPassword(newPassword) {
     this.currentPassword = newPassword;
   }
@@ -52,6 +56,26 @@ class Game {
     this.countMistake += 1;
   }
 
+  setMistake(number) {
+    this.countMistake = number;
+  }
+
+  getMistake() {
+    return this.countMistake;
+  }
+
+  increaseScore() {
+    this.score += 1;
+  }
+
+  setScore(number) {
+    this.score = number;
+  }
+
+  getScore() {
+    return this.score;
+  }
+
   randomPasswords() {
     this.currentCategory = this.getCurrentCategory();
     this.indexCurrentCategories = this.categories.findIndex(
@@ -69,7 +93,6 @@ class Game {
     );
 
     if (this.itWas === -1) {
-      this.pushPastPasswords(this.currentPassword);
       this.setCurrentPassword(this.currentPassword);
     } else {
       this.randomPasswords();

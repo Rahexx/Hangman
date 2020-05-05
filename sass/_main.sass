@@ -252,6 +252,11 @@ button
         top: calc(25vh / 2)
         left: calc(70vw / 2)
         border-radius: 20px
+        &--changeSize
+            top: calc(75vh / 2)
+            left: calc(25vw / 2)
+            height: 25vh
+            width: 75vw
     &__exit
         position: absolute
         top: 10px
@@ -275,6 +280,9 @@ button
             font-size: 60px
         +mq(extra-large)
             font-size: 32px
+            &--marginTop
+                margin: calc(12.5vh - 20px) auto
+
     &__list
         list-style: none
         text-align: center
