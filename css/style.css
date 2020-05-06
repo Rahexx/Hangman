@@ -353,12 +353,7 @@
 
 .password__content {
   height: 30px;
-}
-
-@media (min-width: 533px) {
-  .password__content {
-    text-align: center;
-  }
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -379,6 +374,12 @@
   .password__content {
     height: 40px;
     margin-bottom: 5px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .password__content {
+    margin: 0 20px 10px;
   }
 }
 
@@ -596,6 +597,7 @@
 
 .list-buttons__random {
   margin-left: 10px;
+  opacity: 0;
 }
 
 @media (min-width: 533px) {
@@ -642,6 +644,9 @@ button {
   letter-spacing: 2px;
   color: white;
   background-color: transparent;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 button:hover {
@@ -684,7 +689,6 @@ button:hover {
     width: 350px;
     margin-left: 40px;
     font-size: 30px;
-    outline: none;
   }
 }
 

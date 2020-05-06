@@ -69,8 +69,7 @@
         flex-basis: 100%
     &__content
         height: 30px
-        +mq(xsmall)
-            text-align: center
+        text-align: center
         +mq(medium)
             height: 40px 
             margin-bottom: 5px
@@ -80,6 +79,8 @@
         +mq(large)
             height: 40px 
             margin-bottom: 5px
+        +mq(extra-large)
+            margin: 0 20px 10px
     &__letter
         position: relative
         display: inline-block
@@ -185,6 +186,7 @@
         justify-content: flex-end
     &__random
         margin-left: 10px
+        opacity: 0
         +mq(xsmall)
             position: absolute
             bottom: 10px
@@ -212,6 +214,8 @@ button
     letter-spacing: 2px
     color: white
     background-color: transparent
+    outline: none
+    box-shadow: none
     &:hover
         cursor: pointer
     +mq(xxsmall)
@@ -233,7 +237,6 @@ button
         width: 350px
         margin-left: 40px
         font-size: 30px
-        outline: none
 
 .popup
     height: 100vh

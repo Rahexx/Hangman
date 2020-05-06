@@ -4,7 +4,13 @@ class Game {
       { name: 'programowanie', passwords: ['React', 'Angular', 'Vue', 'Java'] },
       {
         name: 'Harry Potter',
-        passwords: ['Hermiona', 'Hagrid', 'Dumbledore', 'Ginny'],
+        passwords: [
+          'Hermiona',
+          'Hagrid',
+          'Dumbledore',
+          'Ginny',
+          'Zakon Feniksa',
+        ],
       },
       {
         name: 'Gra o tron',

@@ -90,7 +90,9 @@ function countTime() {
   if (seconds > 60) {
     minutes = Math.floor(seconds / 60);
     remainSeconds = seconds % 60;
-    gameInfo.textContent = `odgadniętych: ${game.getScore()} śr.czas: ${minutes}:${remainSeconds}`;
+    gameInfo.textContent = `odgadniętych: ${game.getScore()} śr.czas: ${minutes}:${
+      remainSeconds < 10 ? '0' : ''
+    }${remainSeconds}`;
     return [minutes, remainSeconds];
   }
 
@@ -118,12 +120,15 @@ function lostGame() {
 function checkResult() {
   const password = document.querySelectorAll('.password__content');
   const passwordArr = [...password];
+  const passwordsLength = game.categories.find(
+    (item) => item.name === game.getCurrentCategory(),
+  ).passwords;
   let countVisible = 0;
   let countChildren = 0;
 
   passwordArr.map((item) => {
     const itemChildren = [...item.children];
-    countChildren = itemChildren.length;
+    countChildren += itemChildren.length;
 
     itemChildren.map((child) => {
       if (child.style.visibility) {
@@ -132,24 +137,27 @@ function checkResult() {
     });
   });
 
-  if (
-    (countChildren === countVisible
-      || game.getMistake() === game.getMaxNumberMistake())
-    && game.getPastPasswords().length === 3
-  ) {
-    const sumTime = countTime();
+  // Display sum result game
 
+  if (
+    (countChildren === countVisible ||
+      game.getMistake() === game.getMaxNumberMistake()) &&
+    game.getPastPasswords().length + 1 === passwordsLength.length
+  ) {
+    if (countChildren === countVisible) game.increaseScore();
+    const sumTime = countTime();
+    game.pushPastPasswords(game.getCurrentPassword());
     if (sumTime.length === 1) {
       displayEndGame(
         `Koniec gry twój wynik to ${game.getScore()}/${
-          game.getPastPasswords.length
+          game.getPastPasswords().length
         } w czasie 0:${sumTime[0] < 10 ? '0' : ''}${sumTime[0]}`,
       );
     } else {
       displayEndGame(
         `Koniec gry twój wynik to ${game.getScore()}/${
-          game.getPastPasswords.length
-        } w czasie ${sumTime[0]}:${sumTime[0] < 10 ? '0' : ''}${sumTime[1]}`,
+          game.getPastPasswords().length
+        } w czasie ${sumTime[0]}:${sumTime[1] < 10 ? '0' : ''}${sumTime[1]}`,
       );
     }
 
@@ -221,9 +229,15 @@ function renderPassword() {
   const passwordLetters = [...game.getCurrentPassword()];
 
   // Create letter
-  const spanArray = passwordLetters.map(
-    (letter) => `<span class="password__letter">${letter}</span>`,
-  );
+  const spanArray = passwordLetters.map((letter) => {
+    if (letter === ' ') {
+      return `
+        </p>
+        <p class="password__content">
+      `;
+    }
+    return `<span class="password__letter">${letter}</span>`;
+  });
 
   passwordElem.innerHTML = `
       <p class="password__content">
@@ -238,6 +252,7 @@ function setCurrentCategory() {
   const activeCategory = document.querySelector('.popup__item--active');
   game.setPastPasswords(0);
 
+  if (!randomBtn.style.opacity) randomBtn.style.opacity = '1';
   if (!keyboard.style.opacity) keyboard.style.opacity = '1';
   if (activeCategory) activeCategory.classList.remove('popup__item--active');
 
@@ -261,6 +276,14 @@ function renderCategories() {
   });
 }
 
+function listenerCategory() {
+  const categories = document.querySelectorAll('.popup__item');
+
+  categories.forEach((category) => {
+    category.addEventListener('click', setCurrentCategory);
+  });
+}
+
 function showPopUp(item) {
   const popup = item;
   popup.style.display = 'block';
@@ -269,14 +292,6 @@ function showPopUp(item) {
 function closePopUp(item) {
   const popup = item;
   popup.style.display = 'none';
-}
-
-function listenerCategory() {
-  const categories = document.querySelectorAll('.popup__item');
-
-  categories.forEach((category) => {
-    category.addEventListener('click', setCurrentCategory);
-  });
 }
 
 categoryBtn.addEventListener('click', showPopUp.bind(null, popUp));
